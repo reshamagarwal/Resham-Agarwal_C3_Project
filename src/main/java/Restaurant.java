@@ -9,6 +9,7 @@ public class Restaurant {
     public LocalTime openingTime;
     public LocalTime closingTime;
     private List<Item> menu = new ArrayList<Item>();
+    private List<String> order = new ArrayList<String>();
 
     public Restaurant(String name, String location, LocalTime openingTime, LocalTime closingTime) {
         this.name = name;
@@ -17,6 +18,12 @@ public class Restaurant {
         this.closingTime = closingTime;
     }
 
+    public int addToOrder(String name) {
+        //Item newItem = new Item(name,price);
+        order.add(name);
+        return null;
+    }
+    
     public boolean isRestaurantOpen() {
     	if(openingTime.compareTo(getCurrentTime()) < 1 && closingTime.compareTo(getCurrentTime()) >1)	
     		return true;

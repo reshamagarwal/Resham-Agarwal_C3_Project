@@ -33,7 +33,18 @@ class RestaurantServiceTest {
     	assertThrows(restaurantNotFoundException.class,()->service.findRestaurantByName("Pantry d'or"));
     }
     //<<<<<<<<<<<<<<<<<<<<SEARCHING>>>>>>>>>>>>>>>>>>>>>>>>>>
-
+    
+  //>>>>>>>>>>>>>>>>>>>>>>VIEW TOTAL ORDER<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+    @Test
+    public void select-item_should_return_total_order_value(){
+    	int orderValue = 0;
+    	
+    	orderValue =    restaurant.addToOrder("Sweet corn soup");
+    	
+    	assertNotNull(orderValue);
+    }
+    
+    
 
 
 
