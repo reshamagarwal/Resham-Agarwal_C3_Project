@@ -10,6 +10,7 @@ public class Restaurant {
     public LocalTime closingTime;
     private List<Item> menu = new ArrayList<Item>();
     private List<String> order = new ArrayList<String>();
+    int orderValue = 0;
 
     public Restaurant(String name, String location, LocalTime openingTime, LocalTime closingTime) {
         this.name = name;
@@ -20,8 +21,13 @@ public class Restaurant {
 
     public int addToOrder(String name) {
         //Item newItem = new Item(name,price);
-        order.add(name);
-        return null;
+    	
+        //order.add(name);
+        for(Item item: menu) {
+            if(item.getName().equals(name))
+            	orderValue += item.getPrice();
+            }
+        return orderValue;
     }
     
     public boolean isRestaurantOpen() {
